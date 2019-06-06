@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str="xiyangyang"
+    let str1="    chi   cao     "
+
+    // console.log(str.replace(str.charAt(0),str.charAt(0).toUpperCase()));//首字母大写
+
+   // str=str.replace('yan','*')
+   //  console.log(str);      //替换
+
+    // console.log(str.split('').reverse().join());//倒序
+   //
+   //  function tihuan(str,rstr) {
+   // let str1="*".repeat(rstr.length)
+   //      while (str.includes(rstr)) {
+   //          str=str.replace(rstr,str1)
+   //      }return str;
+   //  }
+   //  console.log(tihuan(str, 'yan'));// 替换 把相同的字母替换成为**
+   //
+
+
+    function weizhi(str,rstr) {
+        let a=[]
+        let str1="*".repeat(rstr.length)
+        while (str.includes(rstr)) {
+                  a.push(str.indexOf(rstr))
+                    str=str.replace(rstr,str1)
+                 }return a
+
+    }
+    console.log(weizhi(str, 'y'));//寻找某字符串出现的位置
+
+
+
+  function  charcount(str) {
+      let obj={}
+      for (let i=0;i<str.length;i++){
+          let char=str[i]
+          obj[char]?obj[char]++:obj[char]=1;
+
+      }return obj
+
+  }
+    console.log(charcount(str));
+
+  function charsum(str) {
+      let obj= str.split("").reduce(function (prev,current) {
+           prev[current]? prev[current]++: prev[current]=1;
+           return prev
+       },{});
+      return obj;
+  }
+    console.log(charsum(str));
+
+
+
+</script>
+</body>
+</html>

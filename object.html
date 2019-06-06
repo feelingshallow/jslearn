@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     function preson(xingbie,youxi){
+     this.age=18;
+     this.youxi=youxi;
+     this.hobby=function () {
+         console.log("打游戏");
+     }
+
+     this.xingbie=xingbie;
+     this.name="lyx"
+
+     }
+    let me=new  preson("男" ,"lol");
+     me.name='lxy';
+     let he=new preson("nv","qiaji");
+     he.age=20;
+     console.log(he);
+     console.log(me);
+     me.hobby();
+</script>
+</body>
+</html>

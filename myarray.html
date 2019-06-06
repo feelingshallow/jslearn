@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function myarray() {
+
+        for (let i=0;i<arguments.length;i++){
+            this[i]=arguments[i];
+        }this.length=arguments.length;
+
+        this.push=function () {
+            for (let i =0;i<arguments.length;i++){
+                this[this.length]=arguments[i];
+                   this.length++;
+            }
+            }
+         this.min=function () {
+             let min=this[1];
+             for (let i=0;i<this.length;i++){
+                 if (min>this[i]){
+                     min=this[i];
+                 }
+             }
+        return min; }
+
+           this.unshift=function(){
+            let newarr=[];
+            for (let i=0;i<this.length;i++){
+                newarr[i]=this[i]
+            }
+              this.length=0;
+            for (let i=0;i<arguments.length;i++) {
+                  this.push(arguments[i])
+            }
+            for (let i=0;i<newarr.length;i++){
+                   this.push(newarr[i])
+            }
+            return newarr;
+        }
+    //    寻找元素首次出现的位置
+          this.frist=function () {
+            let flag=true;
+              for (let i=0;i<this.length;i++){
+                  if (arguments[0]===this[i]){
+                      flag=false;
+                      return i;
+                  }
+              }if (flag){
+                  return  -1;
+              }
+          }
+    //放大数组元素
+        this.fangda=function () {
+            for (let i=0;i<=this.length;i++){
+                this[i]=2*this[i];
+            } return this;
+        }
+       // this.map=function (callback) {
+    //      let newarr=new myarray();
+    //     for (let i=0;i<this.length;i++){
+    //         newarr.push(callback(this[i]))
+    //     }return newarr;
+    // }
+
+       this.fliter=function (callback) {
+           let newarr=new myarray();
+           for(let i=0;i<this.length;i++){
+            if (callback(this[i])){
+                 newarr.push(this[i])
+            }
+           }    return newarr;
+       }
+    //     对是否有大于0小于0做出判断
+          this.some=function (callback) {
+            let flag=false;
+              for (let i=0;i<this.length;i++){
+                  if(callback(this[i])){
+                       flag=true;
+                      break
+                  }
+              } return flag
+          }
+
+    }
+    let arr1=new myarray(5,1,2,6,4,);
+
+    // console.log(arr1);
+   // arr1.push('s','b');
+   //  console.log(arr1.min());
+   //  console.log(arr1.unshift('a', 's'));
+   //  console.log(arr1.frist());
+   //  console.log(arr1.fangda());
+   // let arr2= arr1.map(function(value){
+   //       return    value+2
+   //  })
+   //  console.log(arr2());
+    let arr3=arr1.fliter(function (value){
+        return    value%2===0
+    })
+    console.log(arr3);
+
+    let flag =arr1.some(function (value) {
+          return value <0;
+    })
+    console.log(flag);
+</script>
+</body>
+</html>

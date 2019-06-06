@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    jieceng(5)
+    function jieceng(num) {
+        var s=1;
+          if (num>1){
+              return s=num*jieceng(num-1);
+          } else {
+              return 1;
+          }
+    }
+    console.log(jieceng(5));
+
+    let arr=["0","1","3",["1","2","3"]];
+    let arr1=deepcopy(arr);
+    console.log(arr1);
+    console.log(arr);
+
+  function deepcopy(arr) {
+      var newarr=[];
+      for (var i=0;i<arr.length;i++){
+          if (typeof arr[i]=="object"){
+              newarr[i]=deepcopy(arr[i]);
+          } else {
+              newarr[i]=arr[i];
+          }
+      }return newarr;
+  }
+
+</script>
+</body>
+</html>

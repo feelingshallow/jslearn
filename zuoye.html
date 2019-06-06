@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=[32,12,62,4,17,56,9,4,12,-52];
+
+    f(a);
+    document.write(a);
+    function f(arr) {
+        var temp;
+        for(var i=0;i<arr.length;i++){
+           for(var j=i+1;j<arr.length;j++){
+            if(arr[i]<arr[j]){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+
+            }
+        }
+        }
+        console.log(arr);
+    }
+    //我的想法 选择排序
+    document.write("<br>");
+    f1(a);
+    document.write(a);
+    function f1(arr) {
+        var temp;
+        for(var i=0;i<arr.length-1;i++){
+            for(var j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j+1];
+                    arr[j+1]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        console.log(arr);
+    }
+   //冒泡算法
+
+
+
+    //存在特定值
+    f2(a,7854)
+    function f2(arr,s) {
+        var flag=false;
+        for(var i=0;i<arr.length;i++){
+            if (arr[i]===s){
+              return true;
+
+            }
+        }if (!flag){
+            return  false;
+        }
+    }
+
+    //判断是否正数
+
+
+    f4(a);
+    function f4(arr) {
+        var flag=true;
+        for(var i=0;i<arr.length;i++){
+            if (arr[i]<0){
+                console.log("存在负数");
+                flag=false;
+            }
+        }if (flag){
+            console.log("不存在 负数");
+        }
+
+    }
+//最值
+    function min(arr) {
+        var min=arr[0];
+        for (var i=0;i<arr.length;i++){
+            if (min>arr[i]){
+                min=arr[i];
+
+            }
+        }console.log("min is" +min);
+    }
+
+    function max(arr) {
+        var max=arr[0];
+        for (var i=0;i<arr.length;i++){
+            if (max<arr[i]){
+                max=arr[i];
+
+            }
+        }console.log("max is" +max);
+    }
+
+
+    value(a,);
+function value(arr,type) {
+    if (!type){type="xiao";}
+    if (type =="xiao"){
+        min(arr);
+    } else if (type =="da") {
+        max(arr);
+    }else {
+        console.log("输入有误");
+    }
+}
+
+// 添加数组元素
+      arrpush(a,'we','s','w')
+    function arrpush(arr,arguments) {
+        for (var i=0;i<arguments.length;i++){
+            arr.push(arguments[i]);
+        }
+        console.log(arr);
+    }
+
+    // arrtop(a,'c','f','q')
+    // function arrtop(arr,arguments) {
+    //     console.log(arguments);
+    //     for (var i=0;i<arguments.length;i++){
+    //         arr.unshift(arguments[i]);
+    //     }
+    //     console.log(arr);
+    // }
+    //
+
+   //  add(a,"s")
+   // function add(arr,arguments) {
+   //      var newarr=[];
+   //      for (var i=0;i<arguments.length;i++){
+   //          newarr.push(arguments[i])
+   //      }
+   //     for (var j=0;j<arr.length;j++){
+   //        newarr.push(arr[j])
+   //      }
+   //     console.log(newarr);
+   // }
+
+   //从前+  第二种
+    arrunshift(a,'s','b');
+    function arrunshift(arr,) {
+       var   newarr=[];
+           for (var i=0;i<arr.length;i++){
+               newarr[i]=arr[i]
+           }
+          arr=[];
+           for (var i=0;i<arguments.length;i++){
+                 arr.push(arguments[i])
+           }
+           for (var i=0;i<newarr.length;i++){
+               arr.push(newarr[i]);
+           }
+        console.log(arr);
+    }
+
+
+
+
+
+    //去重
+    console.log(delrepeat(a));
+    function delrepeat(arr) {
+         var newarr=[];
+         for (var i=0;i<arr.length;i++){
+               if (!f2(newarr,arr[i])){
+                   newarr.push(arr[i]);
+               }
+         }
+        return newarr;
+
+    }
+
+
+</script>
+</body>
+</html>

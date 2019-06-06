@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .box  div{
+            transition: all,ease,1s;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+     window.onload=function () {
+
+       for (let j=0;j<100;j++) {
+         let  box=document.querySelector('.box')
+         let circle=document.createElement('div')
+         let  widths=Math.floor(Math.random()*100)
+                 circle.style.cssText=`
+         width:${widths}px;
+         height:${widths}px;
+         background:  ${radomcolor()};
+         border-radius:50%;
+         position:absolute;
+         left:0;
+         top:0;
+         display:block;
+         `;
+         box.append(circle)
+           setTimeout(function () {
+               circle.style.transitionDelay=j*100+'ms';
+                circle.style.top=randomposit()+'px'
+                circle.style.left=randomposi()+'px'
+           },100)
+           let t=  window.getComputedStyle(box,null).top
+           console.log(t);
+
+
+       }
+
+         function radomcolor(){
+             let str='rgb('
+             for (let i=0;i<3;i++){
+                 let color=Math.floor(Math.random()*256)
+                 str+=color+','
+             }
+             str=str.slice(0,-1)+')'
+             return str
+         }
+         function randomposi(){
+             let wid=window.innerWidth-100
+             let hei=window.innerHeight-100
+             let left=Math.floor(Math.random()*wid)
+             let top=Math.floor(Math.random()*hei)
+             return left
+         }
+         function randomposit(){
+             let wid=window.innerWidth-100
+             let hei=window.innerHeight-100
+             let top=Math.floor(Math.random()*hei)
+             return top
+         }
+
+
+
+
+
+     }
+
+
+</script>
+
+</body>
+</html>

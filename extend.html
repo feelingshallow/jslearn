@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function preson(name ) {
+        this.name=name
+        this.cf=function () {
+            console.log(this.name+"chifa");
+        }
+    }
+    preson.prototype.heshui=function () {
+        console.log(this.name+"heshui");
+    }
+
+
+    function student(name) {
+        preson.call(this);
+          this.name=name;
+        this.study=function (v) {
+            console.log(v);
+
+        }
+    }
+    let ls=new preson("ls");
+    let zs=new student("zs");
+    console.log(zs.name);
+
+    zs.cf();
+    ls.heshui();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cen{
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+           background: #333333;
+        }
+        .circle{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            transition: all ease 0.5s;
+            opacity: 0;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="cen">
+
+</div>
+<script>
+            let cen = document.querySelector('.cen')
+            let r = 100;
+            let n=12;
+            let num=n*5
+            let angle=2/n*Math.PI;
+
+        bubu(num,n,r);
+            function bubu(num,n,r) {
+           for (let i=0;i<num;i++) {
+               if (i%n==0&&i!=0){
+                   r+=50
+
+               }
+               let rad=angle*i
+              let lefts=r*Math.cos(rad)
+              let tops=r*Math.sin(rad)
+               let circle = document.createElement('div')
+               circle.classList.add('circle')
+               cen.appendChild(circle)
+
+               setTimeout(function () {
+                   circle.style.transitionDelay=i*100+'ms'
+                   circle.style.left=lefts+'px'
+                   circle.style.top=tops+'px'
+                   circle.style.opacity='1'
+               },100)
+           }
+
+
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table td{
+            border: #ba96ff 1px solid;
+            border-collapse:collapse;
+
+        }
+    </style>
+</head>
+<body>
+<script>
+    document.write('<table>')
+    for(var i=1;i<10;i++){
+        if(i%2==0){
+        document.write("<tr bgcolor='yellow'>")
+        }else{
+            document.write("<tr>")
+        }
+        for (var j=1;j<10;j++){
+            if(j%2==0){
+            document.write("<td bgcolor='navy'>"+i+"----"+j+"</td>")
+            }else{
+                document.write("<td>"+i+"----"+j+"</td>")
+            }
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>")
+
+    document.write('<hr>')
+    var table=("<table>")
+    for(var i=1;i<10;i++){
+        table +=("<tr>")
+        for (var j=1;j<=i;j++){
+            table +=("<td>"+i*j+"</td>")
+        }
+        table +=('</tr>')
+    }
+    document.write(table)
+
+
+    document.write("<hr>")
+ // var arr=[];
+ //    var i=1;
+ //    var j=1;
+ //    for(var k=0;k<100;){
+ //      k=i+j;
+ //      i=j;
+ //      j=k;
+ //        arr.push(k);
+ //        console.log(k);
+ //    }
+ //   var i=0.1;
+ //
+ //    for( var k=0;i<=8848*1000;k++){
+ //        i=(i*2);
+ //    }
+ //    console.log(k);
+
+
+    var  i=0,sum=0.1;
+    while(sum<8848000){
+        sum=sum*2;
+        i++;
+    }
+    console.log(i);
+</script>
+</body>
+</html>

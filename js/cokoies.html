@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let date=new Date()
+    date.setDate(date.getDate()+1)
+    document.cookie="name=shangsan"
+    console.log(document.cookie);
+    document.cookie='age=18;expires='+date.toUTCString()
+    function getcookies(key) {
+        let cookies=document.cookie;
+        let arr=cookies.split('; ');
+        let value='';
+        arr.forEach(ele=>{
+            let [keys,values]=ele.split('=')
+            keys=key&&(value=values);
+        })
+        return value
+    }
+
+    console.log(getcookies('name'));
+</script>
+</body>
+</html>

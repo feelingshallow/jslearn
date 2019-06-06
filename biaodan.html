@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main{
+            width: 400px;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+           box-shadow: 0 0 2px 0 rgba(0,0,0,0.5) ;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        main h1{
+            font-size: 20px;
+            text-align: center;
+        }
+        main div input{
+            width: 100%;
+            border-radius: 10px;
+            border: #22a2aa 1px solid;
+            outline: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+        input:focus{
+            border: #046b80 1px solid;
+        }
+        ::placeholder{
+            color: #3bacfe;
+        }
+        input[type=button]{
+            background: #4ebbfe;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1> login</h1>
+    <div><input type="text" placeholder="username" value=""></div>
+    <div><input type="password" placeholder="password"></div>
+    <div><input type="button" value="提交"></div>
+
+</main>
+<script>
+    window.onload=function () {
+        let inputs=document.getElementsByTagName("input")
+      
+
+        inputs[2].onclick=function () {
+            let username=inputs[0].value
+            let password=inputs[1].value
+            if (username=="lxy"&&password==123) {
+                alert("success")
+            }else {
+                location.assign("error.html")
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

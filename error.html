@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+错误  还有 <span>5</span>秒返回
+<script>
+    window.onload=function () {
+        let time=document.getElementsByTagName("span")
+        let number=time[0].innerHTML
+
+          setInterval(function () {
+              number--
+              history.back()
+              time[0].innerHTML=number
+          },1000)
+
+
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  arr=[12,2,33,24,54,16,16,2]
+    let arr1=[7,8,9,]
+
+     let i=arr.slice(Math.floor(Math.random()*arr.length),Math.floor(Math.random()*arr.length-1))//随机抽取数组
+
+    function f(number,arr){
+        let newarr=[];
+        if(arr.constructor.name!=='Array'){
+            return
+        }
+        if (number>arr.length){
+            return  "cuowu"
+        }
+        for(let i=0;i<number;i++){
+            let index=Math.floor(Math.random()*arr.length);
+            // while (newarr.includes(arr[index])){
+            //     index =Math.floor(Math.random()*arr.length);
+            // }
+            if (newarr.includes(arr[index])){
+                i++;
+                continue
+            }
+            newarr.push(arr[index])
+
+        }
+        return newarr;
+    }
+
+    console.log(f(6, arr));
+
+    // console.log(i);
+
+</script>
+</body>
+</html>

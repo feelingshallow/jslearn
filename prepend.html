@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>1</h1>
+    <h2>2</h2>
+</div>
+<script>
+    HTMLElement.prototype.pepend=function (ele1) {
+        let fri=this.firstElementChild
+         if (fri){
+             this.insertBefore(ele1,fri)
+         } else {
+             this.append(ele1)
+         }
+    }
+    HTMLElement.prototype.pependto=function(ele2){
+        ele2.pepend(this)
+    }
+     let  p=  document.createElement('p')
+        p.innerText='hello'
+
+     let h3=document.createElement('h3')
+     h3.innerText='zuiqian'
+    let d=document.querySelector('div')
+      d.pepend(p)
+
+    HTMLElement.prototype.after=function (ele) {
+      let   par=this.parentNode
+        let  next=this.nextElementSibling
+        par.insertBefore(ele,next)
+    }
+      h1=document.getElementsByTagName('h1')
+       p.after(h3)
+
+
+</script>
+</body>
+</html>

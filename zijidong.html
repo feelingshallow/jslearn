@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background: #3bacfe;
+            position: absolute;
+            left: 0;
+            top:100px ;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+    window.onload=function () {
+        let box=document.querySelector('.box')
+        let maxheight=window.innerHeight-parseInt( getComputedStyle(box,null).top)
+        console.log(maxheight);
+        let maxwidth=window.innerWidth-parseInt(getComputedStyle(box,null).top)
+        let movex=10
+        let movey=10
+        setInterval(function () {
+            let  tops= parseInt( getComputedStyle(box,null).top)
+            let  lefts=parseInt( getComputedStyle(box,null).left)
+            if (tops>maxheight){
+                     top=maxheight
+                     movex=movex*(-1)
+            }
+            if (tops<0){
+                tops=0
+                movex*=-1
+            }
+            if (lefts>maxwidth){
+                lefts=maxwidth
+                 movey*=-1
+            }
+            if (lefts<0){
+                lefts=0
+                movey*=-1
+            }
+            tops+=movex
+            lefts+=movey
+            box.style.top=tops+ 'px'
+            box.style.left=lefts+'px'
+        },100)
+        window.onresize=function () {
+            maxwidth=window.innerWidth-parseInt(getComputedStyle(box,null).top)
+            maxheight=window.innerHeight-parseInt( getComputedStyle(box,null).top)
+        }
+    }
+</script>
+</body>
+</html>
