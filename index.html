@@ -2,57 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>js</title>
+    <title>todolist</title>
+    <link rel="stylesheet" href="./css/todolist.css">
 </head>
 <body>
-<script>
-   //  alert(123)
-   //  console.log("hellowrold");
-   //  console.log(4563);
-   //
-   //  var num1="10";
-   //  console.log(num1);
-   //  var num2;
-   //  num2="50"
-   //  console.log(num2);
-   // // var s=num1+num2
-   //  console.log(num2+num1);
-   //
-   //  // console.log(c);
-   //  console.log(++num1);      //6
-   //  // console.log(num1++);     //5
-   //  console.log(num1);
-   //  console.log(num1++ + 5);
-   //  console.log(num1);
-//   偶数求和
-// var sum=0;
-// for(var i=1;i<11;i++){
-//     if(i%2==0){
-//         console.log(i);
-//         sum+=i;
-//     }
-// }
-//    console.log(sum);
-// //全求和
-// var h=0;
-// for(var s=0;s<11;s++){
-//     h+=s;
-// }
-// console.log(h);
-//偶数输出
-       for(var j=0;j<5;j++) {
-       for(var a=0;a<5-j;a++){
-           document.write("&nbsp&nbsp")
-       }
-       for (var i = 0; i < 2*j-1; i++) {
 
-           document.write("*")
-       }
-       document.write("<br>")
-   }
+<header>
+    <form action="">
+        <input type="text" name="content" placeholder="请输入待办事项">
+        <input type="submit" value="添加" >
+    </form>
+</header>
+<div class="big">
+<ul class="content">
+    <li class="hot" type="all">全部</li>
+    <li type="done">已完成</li>
+    <li type="doing">未完成</li>
+    <div class="top"></div>
+</ul>
+<ul class="message">
 
-
-</script>
-<script src="index.js"></script>
+</ul>
+</div>
+<script src="js/todolist.js"></script>
 </body>
 </html>
