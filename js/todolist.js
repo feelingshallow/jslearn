@@ -62,7 +62,7 @@ window.addEventListener('load',function () {
             id = 0;
         }
         let content=text1.value;
-        let ctime=new Date().toLocaleDateString();
+        let ctime=Array.of(new Date().toLocaleDateString().split('/')).join('-');
         let status=false;
         return{id,content,ctime,status}
     }

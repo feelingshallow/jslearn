@@ -98,7 +98,6 @@ li.hot:nth-child(3) ~.top{
     font-size: 20px;
     line-height: 3;
     padding: 0 10px;
-    border-bottom: solid 1px #9a9a9a;
     display: inline-block;
 }
 .message del{
