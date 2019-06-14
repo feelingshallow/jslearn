@@ -6,10 +6,10 @@ window.addEventListener('load',function () {
 
     //    创建数组 用来添加项目
     let todolist=[
-         { id: 1, content:'交作业',ctime:'2019-6-4',status:false},
-         { id: 2, content:'交了作业',ctime:'2019-6-10',status:true},
-         { id: 3, content:'bu交作业',ctime:'2019-6-10',status:true},
-         { id: 4, content:'bu交作业',ctime:'2019-6-4',status:false},
+         { id: 1, content:'交作业',ctime:'2019/6/4',status:false},
+         { id: 2, content:'交了作业',ctime:'2019/6/10',status:true},
+         { id: 3, content:'bu交作业',ctime:'2019/6/10',status:true},
+         { id: 4, content:'bu交作业',ctime:'2019/6/4',status:false},
     ]
     // local storage
           let str=localStorage.getItem('todolist')
@@ -62,7 +62,7 @@ window.addEventListener('load',function () {
             id = 0;
         }
         let content=text1.value;
-        let ctime=Array.of(new Date().toLocaleDateString().split('/')).join('-');
+        let ctime=Array.of(new Date().toLocaleDateString());
         let status=false;
         return{id,content,ctime,status}
     }
@@ -128,4 +128,4 @@ window.addEventListener('load',function () {
 
 
 
-})
+});

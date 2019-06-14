@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+    <link rel="stylesheet" href="./css/todolist.css">
+    <script src="js/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+<header>
+    <form action="">
+        <input type="text" name="content" placeholder="请输入待办事项">
+        <input type="submit" value="添加" >
+    </form>
+</header>
+<div class="big">
+    <ul class="content">
+        <li class="hot" type="all">全部</li>
+        <li type="done">已完成</li>
+        <li type="doing">未完成</li>
+        <div class="top"></div>
+    </ul>
+    <ul class="message">
+
+    </ul>
+</div>
+<script>
+  $(function () {
+   let tabli= $('li')
+      let message=$('.message')
+      let type='all'
+        let todolist=[
+            {id:1,content:'吃饭',status:true,ctime:'2019/6/11'},
+            {id:2,content:'睡觉',status:false,ctime:'2019/6/11'},
+            {id:3,content:'电子竞技',status:false,ctime:'2019/6/11'}
+
+        ]
+      tabli.on('click',function () {
+          let _this=$(this)
+             type= _this.attr('type');
+         _this.addClass('hot').siblings().removeClass('hot');
+          render(filterdata(type))
+    })
+      tabli.triggerHandler('click')
+
+      function filterdata(type){
+          let arr=[];
+          switch (type) {
+              case 'all':
+                  arr=todolist;
+                  break;
+              case 'done':
+                  arr=todolist.filter(ele=> ele.status);
+                  break;
+              case "doing":
+                  arr=todolist.filter(ele=> !ele.status);
+                  break;
+          }
+          return arr
+      }
+      //  渲染
+      function render(arr) {
+       let html =''
+        arr.forEach(function (elem) {
+            if (elem.status){
+                html+=`
+             <li id="${elem.id}"><input type="checkbox" checked>${elem.content} <del>X</del> <time>${elem.ctime}</time>  </li>
+            `;
+            } else {
+                html+=`
+             <li id="${elem.id}"><input type="checkbox" >${elem.content}  <del>X</del> <time>${elem.ctime}</time></li>
+            `
+            }
+
+        })
+        message.html(html)
+    }
+
+//    删除
+      message.on('click','del',function f() {
+          let _this=$(this)
+          let id=_this.closest('li').attr('id')
+
+      })
+
+})
+</script>
+</body>
+</html>
