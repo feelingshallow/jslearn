@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #1b6d85;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+     let div=document.getElementsByTagName('div');
+     let  box=div[0]
+      box.onmousedown=function (e) {
+          let ox = e.offsetX;
+          let oy = e.offsetY;
+
+          box.onmousemove = function (e) {
+              let cx = e.clientX;
+              let cy = e.clientY;
+              box.style.left = cx - ox+'px';
+              box.style.top = cy - oy+'px';
+          }
+          box.onmouseup=function () {
+               document.onmousemove=null;
+               document.onmouseup=null;
+          }
+
+      }
+</script>
+</body>
+</html>

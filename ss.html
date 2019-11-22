@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var nums=[5,3,2,2,1,2,2,6]
+    function f(nums) {
+        nums.sort((a,b)=>{return a-b;})
+        console.log(nums);
+    let obj= nums.reduce(function (pre,cur) {
+            if(cur in pre){
+                pre[cur]++
+            }else{
+                pre[cur] = 1
+            }
+            return pre
+        },{})
+       for(let x in obj){
+           console.log(Math.max(obj[x]));
+       }
+    }
+
+    console.log(f(nums));
+</script>
+</body>
+</html>

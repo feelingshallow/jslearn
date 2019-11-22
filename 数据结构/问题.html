@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[5,68,56,1,351,3]
+     function f(arr,n,sum){
+         if(n===0){
+             throw Error("n值大于0")
+         }
+           if(n===1){
+               for(var i=0;i<arr.length;i++){
+                   if(arr[i]==sum){
+                       return arr[i]
+                   }
+               }
+           }
+          for(var i=0;i<arr.length;i++){
+               var newarr= arr.slice(i,n)
+               if(newarr.length>0){
+               var sum1=newarr.reduce((pre,cur)=>{
+                   return pre+cur                  
+               })
+               if(sum===sum1){
+                   return newarr;
+               }
+               }
+          }
+
+     }
+     console.log(f(arr,3,129))
+    
+    </script>
+</body>
+</html>

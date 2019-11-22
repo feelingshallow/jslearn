@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+           background: #4ebbfe;
+        }
+        .title{
+            display: flex;
+        }
+        .title li{
+            width: 200px;
+            height: 50px;
+            background: #046b80;
+            border: 1px solid black;
+        }
+        .content{
+            display: flex;
+
+        }
+        .content li{
+            width: 400px;
+            height: 300px;
+            background-color: #4cd964;
+        }
+        .hidden{
+            display: none;
+        }
+        li.hot:first-child{
+            transform: translate(0,100%);
+        }
+    </style>
+</head>
+
+<body>
+<div class="box">
+    <ul class="title">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <ul class="content">
+        <li>1的内容</li>
+        <li class="hidden">2的内容</li>
+    </ul>
+</div>
+<script>
+ function getitems(start,...middle,) {
+     return [...start,...middle,];
+ }
+
+ console.log(getitems(["前", "端"], "专" ));
+</script>
+</body>
+</html>

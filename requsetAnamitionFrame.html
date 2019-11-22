@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #1b6d85;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+      let box=document.getElementsByClassName('box')
+      console.log(box);
+      var w=200
+      box[0].onclick=function () {
+         let t=  setInterval(function () {
+               w+=100;
+               if (w===1000){
+                   clearInterval(t)
+               }
+               box[0].style.width=w+'px'
+           },100)
+      }
+</script>
+</body>
+</html>

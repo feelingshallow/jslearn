@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button> hello ajax</button>
+<script>
+
+         let btn=document.getElementsByTagName("button")
+         btn[0].onclick=function () {
+           let xhr= new XMLHttpRequest();
+           xhr.open("get","hello.text")
+            xhr.send();
+           xhr.onreadystatechange=function (e) {
+               if (xhr.status===200&&xhr.readyState===4){
+
+               }
+           }
+         }
+
+</script>
+</body>
+</html>
